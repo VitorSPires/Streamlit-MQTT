@@ -2,6 +2,7 @@ import mqtt
 import streamlit as st
 import style
 
+
 style.setStyle()
 
 st.title('Teste')
@@ -16,17 +17,17 @@ if st.button('Botão'):
 with st.expander('expander 2', expanded=True):
     if option == 'Comedy':
         if st.button('Gerenciador de tarefas'):
-            mqtt.publish(mqtt.client, 'teste')
+            mqtt.publish('teste')
         if st.button('Botão windows'):
-            mqtt.publish(mqtt.client, 'teste2')
+            mqtt.publish('teste2')
         if st.button('esc'):
-            mqtt.publish(mqtt.client, 'teste3')
+            mqtt.publish('teste3')
         if st.button('alt f4'):
-            mqtt.publish(mqtt.client, 'teste4')
+            mqtt.publish('teste4')
 
         if st.checkbox('teste 5') == True:
-            mqtt.publish(mqtt.client, 'teste5')
-        else: mqtt.publish(mqtt.client, 'teste6')
+            mqtt.publish('teste5')
+        else: mqtt.publish('teste6')
 
     elif option == 'Drama':
         st.text('nada aqui')
