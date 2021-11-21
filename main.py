@@ -3,6 +3,7 @@ import streamlit as st
 import style
 
 style.setStyle()
+client = mqtt.setup()
 
 st.title('Teste')
 with st.expander('expander 1', expanded=True):
@@ -16,17 +17,18 @@ if st.button('Botão'):
 with st.expander('expander 2', expanded=True):
     if option == 'Cena 1':
         if st.button('Gerenciador de tarefas'):
-            mqtt.publish('teste')
+            client.publish("vitor/teste/canal1", 'teste1')
         if st.button('Botão windows'):
-            mqtt.publish('teste2')
+            client.publish("vitor/teste/canal1", 'teste2')
         if st.button('esc'):
-            mqtt.publish('teste3')
+            client.publish("vitor/teste/canal1", 'teste3')
         if st.button('alt f4'):
-            mqtt.publish('teste4')
+            client.publish("vitor/teste/canal1", 'teste4')
 
         if st.checkbox('teste 5') == True:
-            mqtt.publish('teste5')
-        else: mqtt.publish('teste6')
+            client.publish("vitor/teste/canal1", 'teste5')
+        else:
+            client.publish("vitor/teste/canal1", 'teste6')
 
     elif option == 'Cena 2':
         st.text('nada aqui')
