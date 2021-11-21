@@ -30,3 +30,12 @@ def setStyle():
                 </style>
                 """
     st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+
+    btnTransicao = """
+                <style>
+                button[value="Transição"] {
+                    background-color: coral;
+                }
+                </style>
+                """
+    st.markdown(btnTransicao, unsafe_allow_html=True)
